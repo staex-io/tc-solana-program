@@ -34,9 +34,9 @@ pub fn process_instruction(
 #[cfg(test)]
 mod test {
     use solana_program_test::*;
-    use solana_sdk::{
-        instruction::Instruction, pubkey::Pubkey, signature::Signer, transaction::Transaction,
-    };
+    use solana_sdk::{instruction::Instruction, pubkey::Pubkey};
+    use solana_signer::Signer;
+    use solana_transaction::Transaction;
 
     use crate::Data;
 
@@ -44,7 +44,7 @@ mod test {
     async fn test_hello_world() {
         let program_id = Pubkey::new_unique();
         let mut program_test = ProgramTest::default();
-        program_test.add_program("solana", program_id, None);
+        program_test.add_program("tc_solana_program", program_id, None);
         let (banks_client, payer, recent_blockhash) = program_test.start().await;
 
         let instruction = Instruction {

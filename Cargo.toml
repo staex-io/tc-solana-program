@@ -1,16 +1,18 @@
 [package]
 name = "tc-solana-program"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-solana-program = { version = "3.0.0", features = [], default-features = false }
-borsh = { version = "1.5.7", features = ["derive"], default-features = false }
+solana-program = { version = "2.1.1", features = [], default-features = false }
+borsh = { version = "1.5.5", features = ["derive"], default-features = false }
 
 [dev-dependencies]
-solana-program-test = { version = "3.0.5", features = [], default-features = false }
-solana-sdk = { version = "3.0.0", features = [], default-features = false }
-tokio = { version = "1.47.1", features = [], default-features = false }
+solana-program-test = { version = "2.1.1", features = [], default-features = false }
+solana-sdk = { version = "2.1.1", features = [], default-features = false }
+solana-transaction = { version = "2.2.2", features = [], default-features = false }
+solana-signer = { version = "2.2.1", features = [], default-features = false }
+tokio = { version = "1.44.0", features = [], default-features = false }
